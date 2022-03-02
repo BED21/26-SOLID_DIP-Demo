@@ -1,16 +1,18 @@
 ﻿
 
-public static class ExceptionLogger
+public class ExceptionLogger
 {
-    public static void LogIntoFile(Exception aException)
+    private readonly ILogger _logger;
+
+    public ExceptionLogger(ILogger logger)
     {
-        FileLogger objFileLogger = new FileLogger();
-        objFileLogger.LogMessage(GetUserReadableMessage(aException));
+        _logger = logger;
     }
-    public static void LogIntoDatabase(Exception aException)
+
+    public void LogException(Exception exception)
     {
-        DbLogger objDbLogger = new DbLogger();
-        objDbLogger.LogMessage(GetUserReadableMessage(aException));
+        string message = GetUserReadableMessage(exception);
+        _logger.LogMessage(message);
     }
 
     private static string GetUserReadableMessage(Exception ex)
