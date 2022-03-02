@@ -1,2 +1,4 @@
 ﻿// See https://github.com/BED21/26-SOLID_DIP-Demo for source code
-Console.WriteLine("Hello, World!");
+
+
+ExceptionLogger.LogIntoDatabase(new IOException());

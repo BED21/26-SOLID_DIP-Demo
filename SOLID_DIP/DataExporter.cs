@@ -14,9 +14,13 @@ namespace SOLID_DIP
             {
                 // code to export data from files to database
             }
+            catch (IOException ex)
+            {
+                ExceptionLogger.LogIntoDatabase(ex);
+            }
             catch (Exception ex)
             {
-                new ExceptionLogger.LogIntoFile(ex);
+                ExceptionLogger.LogIntoFile(ex);
             }
         }
     }
