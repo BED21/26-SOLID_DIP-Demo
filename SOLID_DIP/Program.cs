@@ -1,2 +1,2 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿// See https://github.com/BED21/26-SOLID_DIP-Demo for source code
 Console.WriteLine("Hello, World!");
